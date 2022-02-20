@@ -1,25 +1,11 @@
 # -*- coding: utf-8 -*-
+    1. bin and txt files storing copy number of each barcode
+        -- the bin file stores a dictionary with 'master barcodes' as keys, and dictionary(ies) as items;
 """
-Created on Sun Apr 14 14:28:46 2019
-
-@author: Du Jiang
-
-tesed operating system: Windows 7, Windows 10
-
-task:
-    combine barcodes that are ligetimately the same
-
 input:
     step 2 results, i.e. bin files named as '{cell_sample}.bin'
 
-variables subject to change:
-    1. step2_location: directory where the step1 results are stored. default 'step-2'
-    2. distance_allowed: edit distance allowed when determining whether two sequences are legitimately the same
-    3. step3_output: folder to save output files. default 'step-2'
-
 output:
-    1. bin and txt files storing copy number of each barcode
-        -- the bin file stores a dictionary with 'master barcodes' as keys, and dictionary(ies) as items;
            the lower level dictionary stores barcodes as keys, and their copy numbers as items.
         -- the txt file is a two column tab-delimited file:
            first column is 'master barcodes', second column is total copy number of the master barcode.
@@ -27,11 +13,6 @@ output:
     3. stat.txt files storing quality report for each cell sample
 
 """
-
-#subject to change
-step2_location = r'step-2'
-distance_allowed = 4
-step3_output = r'step-3'
 
 #packages
 import os
